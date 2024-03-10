@@ -6,6 +6,7 @@
 using namespace std;
 
 int main(int argc, char **argv) {
+    // 예외 케이스 1
     if (argc != 3) {
         cerr << "Usage: " << argv[0] << " <file1> <file2>" << endl;
         return 1;
@@ -14,10 +15,12 @@ int main(int argc, char **argv) {
     uint32_t n1, n2;
 
     FILE *file1 = fopen(argv[1], "rb");
+    // 예외 케이스 2
     if (!file1) {
         cerr << "Error: '" << argv[1] << "' doesn't exist" << endl;
         return 1;
     }
+    // 예외 케이스 3
     if (fread(&n1, sizeof(n1), 1, file1) != 1) {
         cerr << "Error: Reading error from " << argv[1] << endl;
         fclose(file1);
@@ -26,10 +29,12 @@ int main(int argc, char **argv) {
     fclose(file1);
 
     FILE *file2 = fopen(argv[2], "rb");
+    // 예외 케이스 2
     if (!file2) {
         cerr << "Error: '" << argv[2] << "' doesn't exist" << endl;
         return 1;
     }
+    // 예외 케이스 3
     if (fread(&n2, sizeof(n2), 1, file2) != 1) {
         cerr << "Error: Reading error from " << argv[2] << endl;
         fclose(file2);
