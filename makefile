@@ -1,13 +1,13 @@
 CC=g++
 CFLAGS=-g -Wall
 
-all: add_nbo
+all: add-nbo
 
-add_nbo: add_nbo.o
-	$(CC) $(CFLAGS) -o add_nbo add_nbo.o
+add-nbo: add-nbo.o
+	$(CC) $(CFLAGS) -o add-nbo add-nbo.o
 
-add_nbo.o: add_nbo.cpp
-	$(CC) $(CFLAGS) -c add_nbo.cpp
+add-nbo.o: add-nbo.cpp
+	$(CC) $(CFLAGS) -c add-nbo.cpp
 
 clean:
-	rm -f add_nbo *.o
+	rm -f add-nbo *.o
